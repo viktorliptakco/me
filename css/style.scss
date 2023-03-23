@@ -1,9 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
-@import url('fonts/');
-@font-face {
-    font-family: 'Montserrat';
-    src: url('../fonts/Montserrat-VariableFont_wght.ttf');
-    }
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@900&family=Montserrat:wght@500&family=Orbitron:wght@600&display=swap');
+
 
 $nav-height: 5em;
 $active-button-color: #f87567;
@@ -33,6 +29,7 @@ nav {
     & ul {
         list-style-type: none;
         margin: 0;
+        padding-left: 2.5em;
         display: flex;
         flex-direction: row;
         gap: 1em;
@@ -40,7 +37,7 @@ nav {
     & a {
         text-decoration: none;
         color: cornsilk;
-        transition: all .35s linear;
+        transition: all .25s linear;
     }
 }
 
@@ -60,13 +57,30 @@ section:nth-child(even) {
 }
 
 #one {
-
-    div {
-        padding-top: $nav-height;
+    font-family: 'Lexend', sans-serif;
+    text-align: left;
+    justify-content: start;
+    & div {
+        //padding-top: $nav-height;
+        font-size: 2em;
+        padding-left: 1.25em;       
     }
 }
 
-nav a.active {
-  color: $active-button-color;
-  border-bottom: 3.5px solid $active-button-color;
+.font-color-one {
+    color: #00A7E1;
+}
+
+.font-color-two {
+    color: #f87567;
+}
+
+nav a{
+    &.active {
+        color: $active-button-color;
+        border-bottom: 3.5px solid $active-button-color;
+    }
+    &:hover {
+        color: $active-button-color;
+    }
 }
