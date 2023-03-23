@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap");
+@import url("fonts/");
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-VariableFont_wght.ttf");
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  text-align: center;
+  color: cornsilk;
+}
+
+nav {
+  font-family: "Orbitron", sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #333;
+  border: none;
+  height: 5em;
+  display: flex;
+  align-items: center;
+}
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+nav a {
+  text-decoration: none;
+  color: cornsilk;
+  transition: all 0.35s linear;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section:nth-child(odd) {
+  background-color: #373737;
+}
+
+section:nth-child(even) {
+  background-color: #444;
+}
+
+#one div {
+  padding-top: 5em;
+}
+
+nav a.active {
+  color: #f87567;
+  border-bottom: 3.5px solid #f87567;
+}/*# sourceMappingURL=style.css.map */
