@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@900&family=Montserrat:wght@500&family=Orbitron:wght@600&display=swap');
 
 
-$nav-height: 5em;
-$active-button-color: #f87567;
+$navigation-height: 5em;
+$main-color-thema: #f87567;
+$main-color-font: cornsilk;
 
 html {
     scroll-behavior: smooth;
@@ -12,7 +13,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     text-align: center;
-    color: cornsilk;
+    color: $main-color-font;
 }
 
 nav {
@@ -23,7 +24,7 @@ nav {
     right: 0;
     background-color: #333;
     border: none;
-    height: $nav-height;
+    height: $navigation-height;
     display: flex;
     align-items: center;
     & ul {
@@ -36,7 +37,7 @@ nav {
     }
     & a {
         text-decoration: none;
-        color: cornsilk;
+        color: $main-color-font;
         transition: all .25s linear;
     }
 }
@@ -60,6 +61,10 @@ section:nth-child(even) {
     font-family: 'Lexend', sans-serif;
     text-align: left;
     justify-content: start;
+    //position: sticky;
+    //top: 0;
+    //transform: translateZ(-3px);
+    //z-index: -5;
     & div {
         //padding-top: $nav-height;
         font-size: 2em;
@@ -67,8 +72,14 @@ section:nth-child(even) {
     }
 }
 
+#two {
+    & .skillmea-anchor {
+        color: $main-color-font;
+    }
+}
+
 .font-color-one {
-    color: #00A7E1;
+    color: #1fddff;
 }
 
 .font-color-two {
@@ -77,10 +88,10 @@ section:nth-child(even) {
 
 nav a{
     &.active {
-        color: $active-button-color;
-        border-bottom: 3.5px solid $active-button-color;
+        color: $main-color-thema;
+        border-bottom: 3.5px solid $main-color-thema;
     }
     &:hover {
-        color: $active-button-color;
+        color: $main-color-thema;
     }
 }

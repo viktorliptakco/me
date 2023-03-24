@@ -61,8 +61,12 @@ section:nth-child(even) {
   padding-left: 1.25em;
 }
 
+#two .skillmea-anchor {
+  color: cornsilk;
+}
+
 .font-color-one {
-  color: #00A7E1;
+  color: #1fddff;
 }
 
 .font-color-two {
