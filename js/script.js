@@ -17,10 +17,28 @@ window.addEventListener('scroll', () => {
 
 
 
+const table = document.querySelector('table');
+const rows = table.querySelectorAll('tr');
+
+document.addEventListener('click', function(e) {
+  if (!table.contains(e.target)) {
+    rows.forEach(row => row.querySelector('td').style.display = 'none');
+  }
+});
+
+rows.forEach(row => {
+  const th = row.querySelector('th');
+  const td = row.querySelector('td');
+  //toto je treba upratat do jednej funkcie
+  rows.forEach(row => row.querySelector('td').style.display = 'none');
+  th.addEventListener('click', function() {
+    rows.forEach(row => row.querySelector('td').style.display = 'none');
+    td.style.display = 'table-cell';
+  });
+});
 
 
-
-const table = document.getElementById("myTable");
+/*const table = document.getElementById("my-table");
 const rows = table.rows;
 
 // Skryje všetky TD elementy
@@ -40,4 +58,4 @@ for (let i = 0; i < rows.length; i++) {
     // Zobrazí surodenca TD elementu kliknutého TH elementu
     this.parentElement.querySelector("td").style.display = "table-cell";
   });
-}
+}*/

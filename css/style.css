@@ -21,6 +21,7 @@ nav {
   height: 5em;
   display: flex;
   align-items: center;
+  z-index: 5;
 }
 nav ul {
   list-style-type: none;
@@ -56,9 +57,44 @@ section:nth-child(even) {
   text-align: left;
   justify-content: start;
 }
-#one div {
-  font-size: 2em;
+#one .introduction {
+  font-size: 32px;
   padding-left: 1.25em;
+}
+#one .introduction p {
+  margin: 0.25em 0;
+}
+
+.technology {
+  cursor: pointer;
+  display: inline;
+  margin-right: 0.4em;
+  animation: color-change 4s infinite;
+}
+.technology span {
+  display: inline-block;
+  position: relative;
+  transition: transform 0.25s ease;
+  margin-right: -0.3em;
+}
+.technology span:hover {
+  transform: translateY(-14px);
+  transition: transform 0.25s ease;
+}
+
+@keyframes color-change {
+  0% {
+    color: #f87567;
+  }
+  50% {
+    color: #1fddff;
+  }
+  100% {
+    color: #f87567;
+  }
+}
+.code {
+  display: inline;
 }
 
 #two .skillmea-anchor {

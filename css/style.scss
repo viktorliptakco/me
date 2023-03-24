@@ -6,6 +6,7 @@ $main-color-thema: #f87567;
 $main-color-font: cornsilk;
 
 html {
+    
     scroll-behavior: smooth;
 }
 
@@ -27,6 +28,7 @@ nav {
     height: $navigation-height;
     display: flex;
     align-items: center;
+    z-index: 5;
     & ul {
         list-style-type: none;
         margin: 0;
@@ -57,20 +59,47 @@ section:nth-child(even) {
     background-color: #444;
 }
 
+// SECTION ONE
 #one {
     font-family: 'Lexend', sans-serif;
     text-align: left;
     justify-content: start;
-    //position: sticky;
-    //top: 0;
-    //transform: translateZ(-3px);
-    //z-index: -5;
-    & div {
-        //padding-top: $nav-height;
-        font-size: 2em;
-        padding-left: 1.25em;       
+    & .introduction {
+        font-size: 32px;
+        padding-left: 1.25em;
+        & p {
+            margin: 0.25em 0;
+        }
     }
 }
+
+.technology {   
+    cursor: pointer;
+    display: inline;
+    margin-right: 0.4em;
+    animation: color-change 4s infinite;
+    & span {
+        display: inline-block;
+        position: relative;
+        transition: transform .25s ease;
+        margin-right: -0.3em;
+        &:hover {
+            transform: translateY(-14px);
+            transition: transform 0.25s ease;
+        }
+    } 
+}
+
+@keyframes color-change {
+    0% { color: #f87567; }
+    50% { color: #1fddff; }
+    100% { color: #f87567; }
+}
+
+.code {
+    display: inline;
+}
+
 
 #two {
     & .skillmea-anchor {
@@ -95,3 +124,5 @@ nav a{
         color: $main-color-thema;
     }
 }
+
+  
