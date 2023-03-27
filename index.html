@@ -10,63 +10,76 @@
 <body>
     <nav>
         <ul>
-            <li><a href="#one" class="active">O mne</a></li>
-            <li><a href="#two">Two</a></li>
+            <li><a href="#one" >O mne</a></li>
+            <li><a href="#two">Kód</a></li>
             <li><a href="#three">Three</a></li>
         </ul>
     </nav>
       
     <section id="one">
         <div class="introduction">
-            <p>Ahoj!</p>
-            <p>Volám sa Viktor.</p>
-            <p>Zaujímam sa o</p>
             <div>
-                <div class="technology">
-                    <span>t</span>
-                    <span>e</span>
-                    <span>c</span>
-                    <span>h</span>
-                    <span>n</span>
-                    <span>o</span>
-                    <span>l</span>
-                    <span>ó</span>
-                    <span>g</span>
-                    <span>i</span>
-                    <span>e</span>
-                </div>
-                <span>a</span>
-                <div class="code">
-                    programovanie
-                </div>
+                <p>Ahoj!</p>
+                <p>Volám sa <span class="name">Viktor</span>.</p>
+                <p>Zaujímam sa o</p>
+                <p>
+                    <span class="technology">
+                        <span>t</span>
+                        <span>e</span>
+                        <span>c</span>
+                        <span>h</span>
+                        <span>n</span>
+                        <span>o</span>
+                        <span>l</span>
+                        <span>ó</span>
+                        <span>g</span>
+                        <span>i</span>
+                        <span>e</span>
+                    </span>
+                    <span>a</span>
+                    <span class="code">programovanie</span>
+                </p>
+                <p>webových stránok a aplikácií.</p>    
             </div>
-            <p>webových stránok a aplikácií.</p>    
         </div>
     </section>
     <section id="two">
         <div>
-            <div>
+            <div class="course">
                 Prostredníctvom portálu <a href="https://skillmea.sk/" target="_blank" class="skillmea-anchor">Skillmea</a> som absolvoval niekoľko kurzov.
             </div>
-            <div>
+            <div class="course-description">
                 <table id="my-table">
                     <tr>
                         <th>Webrebel 1: HTML, CSS & JavaScript</th>
-                        <td>co som tam robil</td>
+                        <td>
+                            Rozsiahly a kvalitný kurz o základoch HTML5, CSS3, JavaScripte, JQuery, responzívnom dizajne a daľších témach.
+                        </td>
                     </tr>
                     <tr>
                         <th>Základy programovania a OOP</th>
-                        <td>čo som robil tu</td>
+                        <td>
+                            Tento kurz sa točil hlavne okolo základov PHP. Na pochopenie základných programovacích prinsípov je výborný.
+                            Rovanko tak je skvelý pre pochopenie Objektovo orientovaného programovania.
+                        </td>
                     </tr>
                     <tr>
                         <th>CSS preprocesory: Sass</th>
-                        <td>šak preprocesory</td>
+                        <td>
+                            Kurz ktorý zjednodušuje a výrazne zefektívňuje prácu s CSS.
+                        </td>
                     </tr>
                     <tr>
                         <th>Git a GitHub Základy</th>
-                        <td>tu som zas volačo ine robil</td>
+                        <td>
+                            Stručne a jasne vysvetlené princípy a fungovanie Githubu.
+                            Kurz je dôležitý pre zálohovanie histórie vývoja projektu, čo je praktické pre väčšie projekty.
+                            Pri menších projektoch je podstatné samotné zálohovanie a umiestnenie projektu na web.
+                        </td>
                     </tr>
                 </table>
+
+                <div id="table-content"></div>
 
             </div>
         </div>

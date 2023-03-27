@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@900&family=Montserrat:wght@500&family=Orbitron:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@900&family=Montserrat:wght@500;900&family=Orbitron:wght@600;900&display=swap");
 html {
   scroll-behavior: smooth;
 }
@@ -10,15 +10,22 @@ body {
   color: cornsilk;
 }
 
+section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 nav {
   font-family: "Orbitron", sans-serif;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background-color: #333;
+  background: linear-gradient(360deg, rgba(0, 0, 0, 0), rgb(0, 0, 0));
   border: none;
-  height: 5em;
+  height: 6em;
   display: flex;
   align-items: center;
   z-index: 5;
@@ -35,70 +42,132 @@ nav a {
   text-decoration: none;
   color: cornsilk;
   transition: all 0.25s linear;
+  /*&.active {
+          color: $main-color-thema;
+          border-bottom: 3.5px solid $main-color-thema;
+      }
+      &:hover {
+          color: $main-color-thema;
+      }*/
 }
 
-section {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.active-one {
+  color: #eb3a01;
+  border-bottom: 3.5px solid #eb3a01;
+}
+.active-two {
+  color: #18b1d1;
+  border-bottom: 3.5px solid #18b1d1;
+}
+.active-three {
+  color: #feea02;
+  border-bottom: 3.5px solid #feea02;
+}
+
+/*section:nth-child(even) {
+    background-color: #373737;
 }
 
 section:nth-child(odd) {
-  background-color: #373737;
-}
-
-section:nth-child(even) {
-  background-color: #444;
-}
-
+    background-color: #444;
+}*/
 #one {
-  font-family: "Lexend", sans-serif;
-  text-align: left;
-  justify-content: start;
-}
-#one .introduction {
+  font-family: "Orbitron", sans-serif;
   font-size: 32px;
-  padding-left: 1.25em;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: left;
+  overflow: hidden;
+  background: url(../img/colorful-background.jpg);
+  background-position: center center;
+  background-size: cover;
 }
-#one .introduction p {
-  margin: 0.25em 0;
+
+.introduction {
+  background: radial-gradient(circle at bottom left, rgb(0, 0, 0), rgba(0, 0, 0, 0) 80%);
+  font-size: 32px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  width: 100%;
+  height: 100%;
+}
+.introduction div {
+  margin: 1.25em;
+}
+.introduction div p {
+  margin: 0.15em 0 0 0;
+}
+.introduction .name {
+  color: #feea02;
 }
 
 .technology {
   cursor: pointer;
   display: inline;
   margin-right: 0.4em;
-  animation: color-change 4s infinite;
+  border-bottom: solid 3px #eb3a01;
+  transition: all 0.35s ease;
+  color: #eb3a01;
+}
+.technology:hover {
+  border-bottom: none;
+  transition: all 0.35s ease;
+  color: #feea02;
 }
 .technology span {
   display: inline-block;
   position: relative;
   transition: transform 0.25s ease;
-  margin-right: -0.3em;
+  margin-right: -0.35em;
 }
 .technology span:hover {
   transform: translateY(-14px);
   transition: transform 0.25s ease;
 }
 
-@keyframes color-change {
-  0% {
-    color: #f87567;
-  }
-  50% {
-    color: #1fddff;
-  }
-  100% {
-    color: #f87567;
-  }
-}
+/*@keyframes color-change {
+    0% { color: $main-color-thema; }
+    50% { color: $second-color-thema; }
+    100% { color: $main-color-thema; }
+}*/
 .code {
   display: inline;
+  color: #18b1d1;
 }
 
+#two {
+  background-color: black;
+  z-index: 2;
+}
+#two > div {
+  max-width: 80vw;
+  width: 100%;
+}
 #two .skillmea-anchor {
-  color: cornsilk;
+  color: #eb3a01;
+}
+
+.course {
+  margin-bottom: 1em;
+}
+
+.course-description {
+  display: flex;
+  flex-direction: row;
+}
+.course-description td {
+  display: none;
+}
+
+#my-table {
+  width: 50%;
+}
+
+#table-content {
+  width: 50%;
+  background-color: #444;
 }
 
 .font-color-one {
@@ -106,13 +175,5 @@ section:nth-child(even) {
 }
 
 .font-color-two {
-  color: #f87567;
-}
-
-nav a.active {
-  color: #f87567;
-  border-bottom: 3.5px solid #f87567;
-}
-nav a:hover {
   color: #f87567;
 }/*# sourceMappingURL=style.css.map */

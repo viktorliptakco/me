@@ -6,18 +6,57 @@ window.addEventListener('scroll', () => {
     const currentSectionIndex = sections.length - [...sections].reverse().findIndex(section => window.scrollY >= section.offsetTop - 50) - 1;
 
     navLinks.forEach(link => {
-        link.classList.remove('active');
-        //link.classList.remove(`class${link.getAttribute('href').slice(1)}`);
+        //link.classList.remove('active');
+        link.classList.remove(`active-${link.getAttribute('href').slice(1)}`);
     });
 
     const activeLink = navLinks[currentSectionIndex];
-    activeLink.classList.add('active');
-    //activeLink.classList.add(`class${activeLink.getAttribute('href').slice(1)}`);
+    //activeLink.classList.add('active');
+    activeLink.classList.add(`active-${activeLink.getAttribute('href').slice(1)}`);
 });
 
 
 
-const table = document.querySelector('table');
+const table = document.querySelector("table");
+const contentDiv = document.querySelector("#table-content");
+
+function showSibling(event, contentDiv) {
+    // skryjeme vsetky td elementy
+    const tds = document.querySelectorAll("td");
+    tds.forEach((td) => {
+        td.style.display = "none";
+    });
+
+    // zobrazime sibling td element
+    const sibling = event.target.nextElementSibling;
+    if (sibling.nodeName === "TD") {
+        contentDiv.innerHTML = sibling.innerHTML;
+    }
+}
+
+// pridame click event listener pre kazdy th element
+const ths = document.querySelectorAll("th");
+ths.forEach((th) => {
+    th.addEventListener("click", (event) => {
+        showSibling(event, contentDiv);
+    });
+});
+
+// pridame click event listener na document, ktory skryje vsetky td elementy pri kliknuti mimo tabulky
+document.addEventListener("click", (event) => {
+    if (!table.contains(event.target)) {
+        const tds = document.querySelectorAll("td");
+        tds.forEach((td) => {
+        td.style.display = "none";
+        });
+        contentDiv.innerHTML = "";
+    }
+});
+
+
+
+
+/*const table = document.querySelector('table');
 const rows = table.querySelectorAll('tr');
 
 document.addEventListener('click', function(e) {
@@ -38,7 +77,7 @@ rows.forEach(row => {
 });
 
 
-/*const table = document.getElementById("my-table");
+const table = document.getElementById("my-table");
 const rows = table.rows;
 
 // Skryje všetky TD elementy

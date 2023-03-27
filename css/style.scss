@@ -1,8 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@900&family=Montserrat:wght@500&family=Orbitron:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@900&family=Montserrat:wght@500;900&family=Orbitron:wght@600;900&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
 
-
-$navigation-height: 5em;
-$main-color-thema: #f87567;
+$navigation-height: 6em;
+$main-color-thema: #eb3a01;//#f87567;
+$second-color-thema: #18b1d1;//#1fddff;
+$third-color-thema: #feea02;
 $main-color-font: cornsilk;
 
 html {
@@ -15,15 +17,25 @@ body {
     margin: 0;
     text-align: center;
     color: $main-color-font;
+    //perspective: 1px;
 }
 
+section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+//NAVIGATION
 nav {
     font-family: 'Orbitron', sans-serif;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    background-color: #333;
+    //background-color: #333;
+    background: linear-gradient(360deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
     border: none;
     height: $navigation-height;
     display: flex;
@@ -41,35 +53,79 @@ nav {
         text-decoration: none;
         color: $main-color-font;
         transition: all .25s linear;
+        /*&.active {
+                color: $main-color-thema;
+                border-bottom: 3.5px solid $main-color-thema;
+            }
+            &:hover {
+                color: $main-color-thema;
+            }*/
     }
 }
 
-section {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.active{
+    &-one{
+        color: $main-color-thema;
+        border-bottom: 3.5px solid $main-color-thema;
+    }
+    &-two{
+        color: $second-color-thema;
+        border-bottom: 3.5px solid $second-color-thema;
+    }
+    &-three{
+        color: $third-color-thema;
+        border-bottom: 3.5px solid $third-color-thema;
+    }
 }
 
-section:nth-child(odd) {
+
+
+/*section:nth-child(even) {
     background-color: #373737;
 }
 
-section:nth-child(even) {
+section:nth-child(odd) {
     background-color: #444;
-}
+}*/
 
 // SECTION ONE
 #one {
-    font-family: 'Lexend', sans-serif;
+    //font-family: 'Montserrat', sans-serif;
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(16px, 32px, 48px);
+    font-weight: 900;
+    text-transform: uppercase;
     text-align: left;
-    justify-content: start;
-    & .introduction {
-        font-size: 32px;
-        padding-left: 1.25em;
+    //justify-content: start;
+    //align-items: end;
+    overflow: hidden;
+    background: url(../img/colorful-background.jpg);    
+    background-position: center center;
+    background-size: cover;
+    //transform: translateZ(-2px) scale(1.5);
+}
+
+.introduction {
+    background: radial-gradient(circle at bottom left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 80%);
+    font-size: 32px;
+    //padding: 10em 1.25em 1.25em 1.25em;
+    z-index: 2;
+    //padding: 0.5em 1em;
+    //border-radius: 1em;
+    //
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    width: 100%;
+    height: 100%;
+    & div {
+        margin:1.25em;
         & p {
-            margin: 0.25em 0;
+            margin: 0.15em 0 0 0;
         }
+    }
+    & .name {
+        color: #feea02;
     }
 }
 
@@ -77,12 +133,20 @@ section:nth-child(even) {
     cursor: pointer;
     display: inline;
     margin-right: 0.4em;
-    animation: color-change 4s infinite;
+    border-bottom: solid 3px $main-color-thema;
+    transition: all 0.35s ease;
+    color: $main-color-thema;
+    &:hover{
+        //animation: color-change 2.5s infinite;
+        border-bottom: none;
+        transition: all 0.35s ease;
+        color: #feea02;
+    }
     & span {
         display: inline-block;
         position: relative;
         transition: transform .25s ease;
-        margin-right: -0.3em;
+        margin-right: -0.35em;
         &:hover {
             transform: translateY(-14px);
             transition: transform 0.25s ease;
@@ -90,22 +154,53 @@ section:nth-child(even) {
     } 
 }
 
-@keyframes color-change {
-    0% { color: #f87567; }
-    50% { color: #1fddff; }
-    100% { color: #f87567; }
-}
+/*@keyframes color-change {
+    0% { color: $main-color-thema; }
+    50% { color: $second-color-thema; }
+    100% { color: $main-color-thema; }
+}*/
 
 .code {
     display: inline;
+    color: $second-color-thema;
 }
 
+//*{outline: 1px solid white;}
 
+//SCTION TWO
 #two {
+    background-color: black;
+    z-index: 2;
+    &>div{
+        max-width: 80vw;
+        width: 100%;
+    }
     & .skillmea-anchor {
-        color: $main-color-font;
+        color: $main-color-thema;
     }
 }
+
+.course {
+    margin-bottom: 1em;
+}
+
+.course-description {
+    display: flex;
+    flex-direction: row;
+    & td {
+        display: none;
+    }
+}
+
+#my-table {
+    width: 50%;
+}
+
+#table-content {
+    width: 50%;
+    background-color: #444;
+}
+
 
 .font-color-one {
     color: #1fddff;
@@ -115,14 +210,5 @@ section:nth-child(even) {
     color: #f87567;
 }
 
-nav a{
-    &.active {
-        color: $main-color-thema;
-        border-bottom: 3.5px solid $main-color-thema;
-    }
-    &:hover {
-        color: $main-color-thema;
-    }
-}
 
   
