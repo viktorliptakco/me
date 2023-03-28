@@ -134,17 +134,23 @@ nav a {
 }
 
 .courses {
-  margin-bottom: 1em;
   display: grid;
-  gap: 0.25em;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+  max-width: 100vw;
 }
 .courses div {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  background-color: #18b1d1;
-  padding: 0.5em;
+  grid-template-columns: 1fr 10fr;
+  background-color: rgb(19, 19, 19);
+  padding: 1em;
   border-radius: 0.5em;
   text-align: left;
+  transition: all 0.25s ease;
+}
+.courses div:hover {
+  scale: 1.025;
+  transition: all 0.25s ease;
 }
 .courses div img {
   grid-column: 1/2;
@@ -155,16 +161,10 @@ nav a {
 .courses div h3 {
   grid-column: 2/3;
   font-weight: 700;
-  margin: 0;
+  margin: 0.25em 0.5em;
+  color: rgb(224, 224, 224);
 }
 .courses div p {
   grid-column: 1/3;
-}
-
-.webrebel {
-  grid-row: 1/3;
-}
-
-.oop {
-  grid-column: 2/4;
+  color: rgb(165, 165, 165);
 }/*# sourceMappingURL=style.css.map */

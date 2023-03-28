@@ -6,6 +6,7 @@ $container-margin: 2.5em;
 $main-color-thema: #eb3a01;
 $second-color-thema: #18b1d1;
 $third-color-thema: #feea02;
+$fourth-color-thema: rgb(81, 231, 81);
 $main-color-font: cornsilk;
 
 html {   
@@ -112,7 +113,7 @@ nav {
         //animation: color-change 2.5s infinite;
         border-bottom: none;
         transition: all 0.35s ease;
-        color: rgb(81, 231, 81);
+        color: $fourth-color-thema;
     }
     & span {
         display: inline-block;
@@ -143,6 +144,7 @@ nav {
 //SCTION TWO
 #two {
     background-color: black;
+    //height: 100vh;
     & .container {
         margin-top: $navigation-height;
     }
@@ -152,20 +154,22 @@ nav {
 }
 
 .courses {
-    margin-bottom: 1em;
     display: grid;
-    gap: 0.25em;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    max-width: 100vw;
     & div {
         display: grid;
-        grid-template-columns: 1fr 2fr;    
-        background-color: $second-color-thema;
-        //width: 75%;
-        //grid-template-rows: 3;
-        padding: 0.5em;
+        grid-template-columns: 1fr 10fr;    
+        background-color: rgb(19, 19, 19);
+        padding: 1em;
         border-radius: 0.5em;
         text-align: left;
-        //justify-items: start;
-        //align-items: start;
+        transition: all .25s ease;
+        &:hover {
+            scale: 1.025;
+            transition: all .25s ease;
+        }
         & img {
             grid-column: 1 / 2;
             max-width: 75px;
@@ -175,20 +179,38 @@ nav {
         & h3 {
             grid-column: 2 / 3;
             font-weight: 700;
-            margin: 0;
+            margin: 0.25em 0.5em;
+            color: rgb(224, 224, 224);
         }
         & p {
             grid-column: 1 / 3;
+            color: rgb(165, 165, 165);
         }  
     }
 }
 
 .webrebel {
-    grid-row: 1 / 3;
+    //grid-column: 1 / 2;
+    //grid-row: 1/2;
+    //background-color: #117dd9;
 }
 
 .oop {
-    grid-column: 2 / 4;
+    //grid-column: 1 / 2;
+    //background-color: white;
+}
+
+.sass {
+    //grid-row: 2 / 3;
+}
+
+.github {
+    //grid-column: 2 / 3;
+    //grid-row: 2 / 4;
+}
+
+.js-games {
+    //grid-column: 2 / 3;
 }
 
 
