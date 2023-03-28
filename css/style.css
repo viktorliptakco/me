@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@900&family=Montserrat:wght@500;900&family=Orbitron:wght@600;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@900&family=Montserrat:wght@500;700;900&family=Orbitron:wght@600;900&display=swap");
 html {
   scroll-behavior: smooth;
 }
@@ -11,10 +11,12 @@ body {
 }
 
 section {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
+}
+
+.container {
+  margin: 0 2.5em;
 }
 
 nav {
@@ -31,24 +33,17 @@ nav {
   z-index: 5;
 }
 nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding-left: 2.5em;
   display: flex;
   flex-direction: row;
   gap: 1em;
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
 }
 nav a {
   text-decoration: none;
   color: cornsilk;
   transition: all 0.25s linear;
-  /*&.active {
-          color: $main-color-thema;
-          border-bottom: 3.5px solid $main-color-thema;
-      }
-      &:hover {
-          color: $main-color-thema;
-      }*/
 }
 
 .active-one {
@@ -64,40 +59,27 @@ nav a {
   border-bottom: 3.5px solid #feea02;
 }
 
-/*section:nth-child(even) {
-    background-color: #373737;
-}
-
-section:nth-child(odd) {
-    background-color: #444;
-}*/
 #one {
+  background: linear-gradient(45deg, rgb(0, 0, 0), rgba(0, 0, 0, 0) 65%);
   font-family: "Orbitron", sans-serif;
-  font-size: 32px;
   font-weight: 900;
   text-transform: uppercase;
   text-align: left;
   overflow: hidden;
-  background: url(../img/colorful-background.jpg);
-  background-position: center center;
-  background-size: cover;
+  flex-direction: column;
+  justify-content: end;
 }
 
 .introduction {
-  background: radial-gradient(circle at bottom left, rgb(0, 0, 0), rgba(0, 0, 0, 0) 80%);
-  font-size: 32px;
-  z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: end;
-  width: 100%;
-  height: 100%;
+  margin-bottom: 2.5em;
+  z-index: 2;
 }
-.introduction div {
-  margin: 1.25em;
-}
-.introduction div p {
+.introduction p {
   margin: 0.15em 0 0 0;
+  font-size: 2em;
 }
 .introduction .name {
   color: #feea02;
@@ -114,7 +96,7 @@ section:nth-child(odd) {
 .technology:hover {
   border-bottom: none;
   transition: all 0.35s ease;
-  color: #feea02;
+  color: rgb(81, 231, 81);
 }
 .technology span {
   display: inline-block;
@@ -127,53 +109,62 @@ section:nth-child(odd) {
   transition: transform 0.25s ease;
 }
 
-/*@keyframes color-change {
-    0% { color: $main-color-thema; }
-    50% { color: $second-color-thema; }
-    100% { color: $main-color-thema; }
-}*/
 .code {
-  display: inline;
   color: #18b1d1;
+}
+
+.background-one {
+  background: url(../img/colorful-background.jpg);
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
 }
 
 #two {
   background-color: black;
-  z-index: 2;
 }
-#two > div {
-  max-width: 80vw;
-  width: 100%;
+#two .container {
+  margin-top: 6em;
 }
 #two .skillmea-anchor {
   color: #eb3a01;
 }
 
-.course {
+.courses {
   margin-bottom: 1em;
+  display: grid;
+  gap: 0.25em;
+}
+.courses div {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  background-color: #18b1d1;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  text-align: left;
+}
+.courses div img {
+  grid-column: 1/2;
+  max-width: 75px;
+  max-height: 75px;
+  border-radius: 0.75em;
+}
+.courses div h3 {
+  grid-column: 2/3;
+  font-weight: 700;
+  margin: 0;
+}
+.courses div p {
+  grid-column: 1/3;
 }
 
-.course-description {
-  display: flex;
-  flex-direction: row;
-}
-.course-description td {
-  display: none;
+.webrebel {
+  grid-row: 1/3;
 }
 
-#my-table {
-  width: 50%;
-}
-
-#table-content {
-  width: 50%;
-  background-color: #444;
-}
-
-.font-color-one {
-  color: #1fddff;
-}
-
-.font-color-two {
-  color: #f87567;
+.oop {
+  grid-column: 2/4;
 }/*# sourceMappingURL=style.css.map */

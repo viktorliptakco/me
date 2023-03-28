@@ -16,7 +16,7 @@ window.addEventListener('scroll', () => {
 });
 
 
-
+/*
 const table = document.querySelector("table");
 const contentDiv = document.querySelector("#table-content");
 
@@ -56,7 +56,7 @@ document.addEventListener("click", (event) => {
 
 
 
-/*const table = document.querySelector('table');
+const table = document.querySelector('table');
 const rows = table.querySelectorAll('tr');
 
 document.addEventListener('click', function(e) {
