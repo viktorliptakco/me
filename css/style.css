@@ -125,6 +125,7 @@ nav a {
 
 #two {
   background-color: black;
+  text-align: left;
 }
 #two .container {
   margin-top: 6em;
