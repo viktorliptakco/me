@@ -226,7 +226,7 @@ nav a {
 }
 
 .course-box-item {
-  flex-basis: 32.435%;
+  flex-basis: 32%;
   overflow: hidden;
   border-radius: 28px;
 }
@@ -300,7 +300,12 @@ nav a {
   background-color: #4c49ea;
 }
 
-@media only screen and (max-width: 639px) {
+@media only screen and (max-width: 1024px) {
+  .course-box-item {
+    flex-basis: 48.5%;
+  }
+}
+@media only screen and (max-width: 800px) {
   .container {
     margin: 0 1em;
   }
@@ -311,6 +316,17 @@ nav a {
     font-size: 1.5em;
   }
   .course-box-item {
-    flex-basis: 48.9%;
+    flex-basis: 48.5%;
+  }
+  .course-box-item p {
+    font-size: 12px;
+  }
+  .logo-and-name h3 {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .course-box-item {
+    flex-basis: 100%;
   }
 }/*# sourceMappingURL=style.css.map */
