@@ -247,7 +247,7 @@ nav a {
 }
 
 .item-link:hover .item-bg {
-  transform: scale(10);
+  transform: scale(10.5);
 }
 
 .item-link:hover .logo-and-name {

@@ -15,6 +15,15 @@ window.addEventListener('scroll', () => {
     activeLink.classList.add(`active-${activeLink.getAttribute('href').slice(1)}`);
 });
 
+// Vyberie všetky odkazy so triedou "item-link"
+const itemLinks = document.querySelectorAll('.item-link');
+
+// Pridá preventDefault na každý z nich
+itemLinks.forEach(link => {
+  link.addEventListener('click', event => {
+    event.preventDefault();
+  });
+});
 
 /*
 const table = document.querySelector("table");
