@@ -284,57 +284,18 @@ text-align: left;
 .item-link:hover .logo-and-name {
     left: -100px;
     & h3 {
-        margin: 0 1.5em;
+        margin: 0 0 0 1.5em;
     }
 }
-
-
-/*.ag-courses-item_title {
-    min-height: 87px;
-    margin: 0 0 25px;
-
-    overflow: hidden;
-
-    font-weight: bold;
-    font-size: 30px;
-    color: #FFF;
-
-    z-index: 2;
-    position: relative;
-}
-
-.ag-courses-item_date-box {
-    font-size: 18px;
-    color: #FFF;
-
-    z-index: 2;
-    position: relative;
-}
-
-.ag-courses-item_date {
-    font-weight: bold;
-    color: #f9b234;
-
-    -webkit-transition: color .5s ease;
-    -o-transition: color .5s ease;
-    transition: color .5s ease
-}*/
 
 .item-bg {
     height: 128px;
     width: 128px;
-    //background-color: #f9b234;
-    //background-color: black;
-
     z-index: 1;
     position: absolute;
     top: -75px;
     right: -75px;
-
     border-radius: 50%;
-
-    -webkit-transition: all .5s ease;
-    -o-transition: all .5s ease;
     transition: all .5s ease;
 }
 
@@ -359,6 +320,7 @@ text-align: left;
 }
 
 
+
 .ag-courses_item:nth-child(3n) .ag-courses-item_bg {
     background-color: #e44002;
 }
@@ -373,41 +335,23 @@ text-align: left;
 }
 
 
+@media only screen and (max-width: 639px){
+    .container {
+        margin: 0 1em;
+    }
 
-@media only screen and (max-width: 979px) {
+    .introduction {
+        margin-bottom: 1em;
+        & p {
+            font-size: 1.5em;
+        }
+    }
+    
     .course-box-item {
         -ms-flex-preferred-size: 50%;
         flex-basis: 48.9%;
     }
-    .ag-courses-item_title {
-        font-size: 24px;
-    }
+
 }
-
-@media only screen and (max-width: 767px) {
-    .ag-format-container {
-        width: 96%;
-    }
-}
-
-@media only screen and (max-width: 639px) {
-    .ag-courses_item {
-        -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
-    }
-    .ag-courses-item_title {
-        min-height: 72px;
-        line-height: 1;
-
-        font-size: 24px;
-    }
-    .ag-courses-item_link {
-        padding: 22px 40px;
-    }
-    .ag-courses-item_date-box {
-        font-size: 16px;
-    }
-}
-
 
   
