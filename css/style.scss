@@ -154,76 +154,7 @@ nav {
         color: $main-color-thema;
     }
 }
-
-.courses {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1em;
-    max-width: 100vw;
-    position: relative;
-    & div {
-        display: grid;
-        grid-template-columns: 1fr 10fr;    
-        background-color: rgb(19, 19, 19);
-        padding: 1em;
-        border-radius: 0.5em;
-        text-align: left;
-        /*transition: all .25s ease;
-        &:hover {
-            scale: 1.025;
-            transition: all .25s ease;
-        }*/
-        & img {
-            grid-column: 1 / 2;
-            max-width: 75px;
-            max-height: 75px;
-            border-radius: 0.75em;
-        }       
-        & h3 {
-            grid-column: 2 / 3;
-            font-weight: 700;
-            margin: 0.25em 0.5em;
-            color: rgb(224, 224, 224);
-        }
-        & p {
-            grid-column: 1 / 3;
-            color: rgb(165, 165, 165);
-        }  
-    }
-}
-
-/*.webrebel {
-    //grid-column: 1 / 2;
-    //grid-row: 1/2;
-    //background-color: #117dd9;
-}
-
-.oop {
-    //grid-column: 1 / 2;
-    //background-color: white;
-}
-
-.sass {
-    //grid-row: 2 / 3;
-}
-
-.github {
-    //grid-column: 2 / 3;
-    //grid-row: 2 / 4;
-}
-
-.js-games {
-    //grid-column: 2 / 3;
-}*/
-
-// SECTION THREE
 $img-size: 75px;
-
-#three {
-background-color: #000;
-text-align: left;
-}
-
 .course-box {
     display: flex;
     align-items: flex-start;
@@ -332,6 +263,77 @@ text-align: left;
 
 .ag-courses_item:nth-child(6n) .ag-courses-item_bg {
     background-color: #4c49ea;
+}
+
+
+/*.webrebel {
+    //grid-column: 1 / 2;
+    //grid-row: 1/2;
+    //background-color: #117dd9;
+}
+
+.oop {
+    //grid-column: 1 / 2;
+    //background-color: white;
+}
+
+.sass {
+    //grid-row: 2 / 3;
+}
+
+.github {
+    //grid-column: 2 / 3;
+    //grid-row: 2 / 4;
+}
+
+.js-games {
+    //grid-column: 2 / 3;
+}*/
+
+// SECTION THREE
+
+
+#three {
+background-color: #000;
+text-align: left;
+}
+
+
+.courses {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    max-width: 100vw;
+    position: relative;
+    & div {
+        display: grid;
+        grid-template-columns: 1fr 10fr;    
+        background-color: rgb(19, 19, 19);
+        padding: 1em;
+        border-radius: 0.5em;
+        text-align: left;
+        /*transition: all .25s ease;
+        &:hover {
+            scale: 1.025;
+            transition: all .25s ease;
+        }*/
+        & img {
+            grid-column: 1 / 2;
+            max-width: 75px;
+            max-height: 75px;
+            border-radius: 0.75em;
+        }       
+        & h3 {
+            grid-column: 2 / 3;
+            font-weight: 700;
+            margin: 0.25em 0.5em;
+            color: rgb(224, 224, 224);
+        }
+        & p {
+            grid-column: 1 / 3;
+            color: rgb(165, 165, 165);
+        }  
+    }
 }
 
 
