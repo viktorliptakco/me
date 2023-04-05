@@ -124,13 +124,17 @@ nav a {
 
 #two {
   background-color: rgb(0, 0, 0);
-  text-align: left;
 }
 #two .container {
   margin-top: 6em;
 }
-#two .skillmea-anchor {
-  color: #eb3a01;
+
+#three {
+  background-color: #000;
+  text-align: left;
+}
+#three .container {
+  margin-top: 6em;
 }
 
 .course-box {
@@ -178,7 +182,6 @@ nav a {
 }
 .item-link p {
   margin: 1em 0 0 0;
-  height: 6em;
   position: relative;
   z-index: 2;
 }
@@ -259,74 +262,6 @@ nav a {
 
 .ag-courses_item:nth-child(6n) .ag-courses-item_bg {
   background-color: #4c49ea;
-}
-
-/*.webrebel {
-    //grid-column: 1 / 2;
-    //grid-row: 1/2;
-    //background-color: #117dd9;
-}
-
-.oop {
-    //grid-column: 1 / 2;
-    //background-color: white;
-}
-
-.sass {
-    //grid-row: 2 / 3;
-}
-
-.github {
-    //grid-column: 2 / 3;
-    //grid-row: 2 / 4;
-}
-
-.js-games {
-    //grid-column: 2 / 3;
-}*/
-#three {
-  background-color: #000;
-  text-align: left;
-}
-#three .container {
-  margin-top: 6em;
-}
-
-.courses {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1em;
-  max-width: 100vw;
-  position: relative;
-}
-.courses div {
-  display: grid;
-  grid-template-columns: 1fr 10fr;
-  background-color: rgb(19, 19, 19);
-  padding: 1em;
-  border-radius: 0.5em;
-  text-align: left;
-  /*transition: all .25s ease;
-  &:hover {
-      scale: 1.025;
-      transition: all .25s ease;
-  }*/
-}
-.courses div img {
-  grid-column: 1/2;
-  max-width: 75px;
-  max-height: 75px;
-  border-radius: 0.75em;
-}
-.courses div h3 {
-  grid-column: 2/3;
-  font-weight: 700;
-  margin: 0.25em 0.5em;
-  color: rgb(224, 224, 224);
-}
-.courses div p {
-  grid-column: 1/3;
-  color: rgb(165, 165, 165);
 }
 
 @media only screen and (max-width: 1024px) {
