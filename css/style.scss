@@ -2,6 +2,7 @@
 
 $navigation-height: 6em;
 $container-margin: 2.5em;
+$img-size: 75px;
 
 $main-color-thema: #eb3a01;
 $second-color-thema: #18b1d1;
@@ -108,7 +109,7 @@ nav {
     cursor: pointer;
     display: inline;
     margin-right: 0.4em;
-    border-bottom: solid 3px $main-color-thema;
+    //border-bottom: solid 3px $main-color-thema;
     transition: all 0.35s ease;
     color: $main-color-thema;
     &:hover{
@@ -145,7 +146,7 @@ nav {
 
 // SECTION TWO
 #two {
-    background-color: black;
+    background-color: rgba(0, 0, 0);
     text-align: left;
     & .container {
         margin-top: $navigation-height;
@@ -154,7 +155,8 @@ nav {
         color: $main-color-thema;
     }
 }
-$img-size: 75px;
+
+
 .course-box {
     display: flex;
     align-items: flex-start;
@@ -174,6 +176,8 @@ $img-size: 75px;
         max-width: $img-size;
         height: $img-size;
         border-radius: 0.75em;
+        transform: scale(1);
+        transition: all 0.5s ease;
     }
     & h3{
         font-size: 20px;
@@ -215,7 +219,7 @@ $img-size: 75px;
 .item-link:hover .logo-and-name {
     left: -100px;
     & h3 {
-        margin: 0 0 0 1.5em;
+        margin: 0 0 0 1.4em;
     }
 }
 
@@ -296,6 +300,9 @@ $img-size: 75px;
 #three {
 background-color: #000;
 text-align: left;
+    & .container {
+        margin-top: $navigation-height;
+    }
 }
 
 

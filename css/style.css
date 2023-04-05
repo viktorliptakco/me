@@ -89,7 +89,6 @@ nav a {
   cursor: pointer;
   display: inline;
   margin-right: 0.4em;
-  border-bottom: solid 3px #eb3a01;
   transition: all 0.35s ease;
   color: #eb3a01;
 }
@@ -124,7 +123,7 @@ nav a {
 }
 
 #two {
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   text-align: left;
 }
 #two .container {
@@ -153,6 +152,8 @@ nav a {
   max-width: 75px;
   height: 75px;
   border-radius: 0.75em;
+  transform: scale(1);
+  transition: all 0.5s ease;
 }
 .logo-and-name h3 {
   font-size: 20px;
@@ -189,7 +190,7 @@ nav a {
   left: -100px;
 }
 .item-link:hover .logo-and-name h3 {
-  margin: 0 0 0 1.5em;
+  margin: 0 0 0 1.4em;
 }
 
 .item-bg {
@@ -261,6 +262,9 @@ nav a {
 #three {
   background-color: #000;
   text-align: left;
+}
+#three .container {
+  margin-top: 6em;
 }
 
 .courses {
