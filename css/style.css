@@ -171,6 +171,7 @@ nav a {
   display: block;
   padding: 1.5em;
   background-color: #121212;
+  overflow: hidden;
   position: relative;
   text-decoration: none;
   color: cornsilk;
@@ -182,15 +183,39 @@ nav a {
   z-index: 2;
 }
 
+.description {
+  display: flex;
+  width: 200%;
+}
+.description p {
+  flex-basis: 100%;
+}
+.description .short {
+  width: 100%;
+  left: 0;
+  transition: all 0.5s ease;
+}
+.description .long {
+  position: relative;
+  left: 20%;
+  transition: all 0.5s ease;
+  font-size: 0.855em;
+}
+
 .item-link:hover .item-bg {
   transform: scale(10.5);
 }
-
 .item-link:hover .logo-and-name {
   left: -100px;
 }
 .item-link:hover .logo-and-name h3 {
   margin: 0 0 0 1.4em;
+}
+.item-link:hover .short {
+  left: -70%;
+}
+.item-link:hover .long {
+  left: -50%;
 }
 
 .item-bg {
@@ -327,6 +352,9 @@ nav a {
   }
   .logo-and-name h3 {
     font-size: 16px;
+  }
+  .courses {
+    grid-template-columns: 1fr;
   }
 }
 @media only screen and (max-width: 600px) {
