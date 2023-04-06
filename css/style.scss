@@ -4,6 +4,8 @@ $navigation-height: 6em;
 $container-margin: 2.5em;
 $img-size: 75px;
 
+$basic-transition: all 0.5s ease;
+
 $main-color-thema: #eb3a01;
 $second-color-thema: #18b1d1;
 $third-color-thema: #feea02;
@@ -80,7 +82,7 @@ nav {
 // SECTION ONE
 #one {
     //background: radial-gradient(circle at bottom left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-    background: linear-gradient(45deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 65%);
+    //background: linear-gradient(45deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 65%);
     font-family: 'Orbitron', sans-serif;
     font-weight: 900;
     text-transform: uppercase;
@@ -88,6 +90,8 @@ nav {
     overflow: hidden;
     flex-direction: column;
     justify-content: end;
+    position: relative;
+    z-index: 3;
 }
 
 .introduction {
@@ -139,22 +143,39 @@ nav {
     background-position: center center;
     background-size: cover;
     width: 100%;
-    height: 100%;
+    height: 120%;
     position: absolute;
-    z-index: -1;
+    z-index: 1;
+    & div {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0) 65%);
+        z-index: 2;
+    }
 }
 
 // SECTION TWO
 #two {
-    background-color: rgba(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0)100%);
+    justify-content: flex-end;
+    position: relative;
+    z-index: 3;
+
     & .container {
         margin-top: $navigation-height;
     }
 }
 
-
+.about-me {
+    text-align: right;
+    & p {
+        width: 50vw;
+    }
+}
 
 // SECTION THREE
+
 #three {
     background-color: #000;
     text-align: left;
@@ -164,108 +185,87 @@ nav {
 }
 
 .course-box {
-    display: flex;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 1em;
-    flex-wrap: wrap;
-    //padding: $navigation-height 0 0 0;
+}
+
+.course-box-item {
+    overflow: hidden;
+    border-radius: 28px;
+    padding: 1.5em;
+    background-color: #121212;
+    overflow: hidden;
+    position: relative;
+    color: $main-color-font;
+}
+
+.course-box-item:hover {
+    & .item-bg {
+        transform: scale(10.5);
+    }
+
+    & .logo-and-name {
+        left: -6.5em;
+        & h3 {
+            margin: 0 0 0 1.4em;
+            & a {
+                text-decoration: underline;
+            }
+        }
+    }
+    & .description {
+        top: -1em;
+    }
 }
 
 .logo-and-name {
     display: flex;
-    margin-right: 2em;
+    //margin-right: 2em;
     position: relative;
     left: 0;
     z-index: 2;
-    transition: all 0.5s ease;
+    transition: $basic-transition;
     & img {
         max-width: $img-size;
         height: $img-size;
         border-radius: 0.75em;
         transform: scale(1);
-        transition: all 0.5s ease;
+        transition: $basic-transition;
     }
     & h3{
         font-size: 20px;
         margin: 0 0.75em;
-        transition: all 0.5s ease;
-    }
-}
-
-.course-box-item {
-    flex-basis: 32%;
-    //margin: 0 15px 30px;
-    //height: 5em;
-    overflow: hidden;
-    border-radius: 28px;
-}
-
-.item-link {
-    display: block;
-    padding: 1.5em;
-    background-color: #121212;
-    overflow: hidden;
-    position: relative;
-    text-decoration: none;
-    color: $main-color-font;
-    & p {
-        margin: 1em 0 0 0;
-        //height: 6em;
-        position: relative;
-        z-index: 2;
+        transition: $basic-transition;
+        & a {
+            color: $main-color-font;
+            text-decoration: none;
+            transition: $basic-transition;
+        }
     }
 }
 
 .description {
     display: flex;
-    width: 200%;
-    & p {
-        flex-basis: 100%;
-    }
-    & .short {
-        width: 100%;
-        left: 0;
-        transition: all 0.5s ease;
-    }
-    & .long {
-        position: relative;
-        left: 20%;
-        transition: all 0.5s ease;
-        font-size: 0.855em;
-    }
+    position: relative;
+    top: 0;
+    margin-top: 1em;
+    z-index: 2;
+    transition: $basic-transition;
 }
 
-.item-link:hover {
-    & .item-bg {
-    transform: scale(10.5);
-    }
 
-    & .logo-and-name {
-        left: -100px;
-        & h3 {
-            margin: 0 0 0 1.4em;
-        }
-    }
-
-    & .short {
-        left: -70%;
-    }
-
-    & .long {
-        left: -50%;
-    }
-}
 
 .item-bg {
     height: 128px;
     width: 128px;
-    z-index: 1;
     position: absolute;
     top: -75px;
     right: -75px;
     border-radius: 50%;
-    transition: all .5s ease;
+    transition: $basic-transition;
 }
+
 
 .webrebel .item-bg {
     background-color: #db3a09;
@@ -303,8 +303,8 @@ nav {
 
 //MEDIA
 @media only screen and (max-width: 1024px){
-    .course-box-item {
-        flex-basis: 48.5%;
+    .course-box {
+        grid-template-columns: 1fr 1fr;
     }
 }
 
@@ -319,14 +319,6 @@ nav {
             font-size: 1.5em;
         }
     }
-    
-    .course-box-item {
-        -ms-flex-preferred-size: 50%;
-        flex-basis: 48.5%;
-        & p {
-            font-size: 12px;
-        }
-    }
 
     .logo-and-name{
         & h3 {
@@ -334,14 +326,11 @@ nav {
         }
     }
 
-    .courses {
-        grid-template-columns: 1fr;
-    }
 }
 
 @media only screen and (max-width: 600px){
-    .course-box-item {
-        flex-basis: 100%;
+    .course-box {
+        grid-template-columns: 1fr;
     }
 }
   
