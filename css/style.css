@@ -149,19 +149,30 @@ nav a {
   font-size: 2em;
   grid-column: 2/4;
 }
+.about-me p:hover, .about-me img:hover {
+  border-radius: 2em;
+}
 .about-me p {
+  position: relative;
+  top: 0;
   margin: 0;
   padding: 1em;
   border-radius: 1em;
   font-size: 1.2em;
+  transition: all 0.5s ease;
 }
 .about-me img {
+  position: relative;
   max-width: 20vw;
   border-radius: 1em;
   background-color: #18b1d1;
   justify-self: center;
   align-self: center;
   grid-column: 3/4;
+  transition: all 0.5s ease;
+}
+.about-me img:hover {
+  background-color: #3ecd5e;
 }
 .about-me .par-one {
   background-color: #3ecd5e;
@@ -221,14 +232,17 @@ nav a {
 
 .course-box-item {
   overflow: hidden;
-  border-radius: 28px;
-  padding: 1.5em;
+  border-radius: 1.5em;
+  padding: 1.25em;
   background-color: #121212;
   overflow: hidden;
   position: relative;
   color: cornsilk;
 }
 
+.course-box-item:hover {
+  border-radius: 1.5em;
+}
 .course-box-item:hover .item-bg {
   transform: scale(10.5);
 }
@@ -236,7 +250,7 @@ nav a {
   left: -6.5em;
 }
 .course-box-item:hover .logo-and-name h3 {
-  margin: 0 0 0 1.4em;
+  margin: 0 0 0 2.3em;
 }
 .course-box-item:hover .logo-and-name h3 a {
   text-decoration: underline;
@@ -253,14 +267,14 @@ nav a {
   transition: all 0.5s ease;
 }
 .logo-and-name img {
-  max-width: 75px;
-  height: 75px;
+  max-width: 60px;
+  height: 60px;
   border-radius: 0.75em;
   transform: scale(1);
   transition: all 0.5s ease;
 }
 .logo-and-name h3 {
-  font-size: 20px;
+  font-size: 1.2em;
   margin: 0 0.75em;
   transition: all 0.5s ease;
 }

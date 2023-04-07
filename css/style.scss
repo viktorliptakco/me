@@ -2,7 +2,7 @@
 
 $navigation-height: 6em;
 $container-margin: 2.5em;
-$img-size: 75px;
+$img-size: 60px;
 
 $basic-transition: all 0.5s ease;
 
@@ -183,20 +183,32 @@ nav {
         font-size: 2em;
         grid-column: 2 / 4;
     }
+    & p:hover, img:hover {
+        border-radius: 2em;
+        //top: -0.5em;
+    }
     & p {
+        position: relative;
+        top: 0;
         margin: 0;
         padding: 1em;
         //border: 2px solid white;
         border-radius: 1em;
         font-size: 1.2em;
+        transition: $basic-transition;
     }
     & img {
+        position: relative;
         max-width: 20vw;
         border-radius: 1em;
         background-color: $second-color-thema;
         justify-self: center;
         align-self: center;
         grid-column: 3 / 4;
+        transition: $basic-transition;
+        &:hover {
+            background-color: $cc-four;
+        }
     }
     .par-one {
         background-color: $cc-four;
@@ -284,8 +296,8 @@ nav {
 
 .course-box-item {
     overflow: hidden;
-    border-radius: 28px;
-    padding: 1.5em;
+    border-radius: 1.5em;
+    padding: 1.25em;
     background-color: #121212;
     overflow: hidden;
     position: relative;
@@ -293,6 +305,7 @@ nav {
 }
 
 .course-box-item:hover {
+    border-radius: 1.5em;
     & .item-bg {
         transform: scale(10.5);
     }
@@ -300,7 +313,7 @@ nav {
     & .logo-and-name {
         left: -6.5em;
         & h3 {
-            margin: 0 0 0 1.4em;
+            margin: 0 0 0 2.3em;
             & a {
                 text-decoration: underline;
             }
@@ -326,7 +339,7 @@ nav {
         transition: $basic-transition;
     }
     & h3{
-        font-size: 20px;
+        font-size: 1.2em;
         margin: 0 0.75em;
         transition: $basic-transition;
         & a {
