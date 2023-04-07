@@ -131,7 +131,7 @@ nav a {
 }
 
 #two {
-  background: linear-gradient(0deg, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(0deg, hsl(176, 47%, 94%), rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0) 100%);
   justify-content: flex-end;
   position: relative;
   z-index: 3;
@@ -141,10 +141,64 @@ nav a {
 }
 
 .about-me {
-  text-align: right;
+  display: grid;
+  gap: 1em;
+  grid-template-columns: 2fr 2fr 1fr;
+}
+.about-me h3 {
+  font-size: 2em;
+  grid-column: 2/4;
 }
 .about-me p {
-  width: 50vw;
+  margin: 0;
+  padding: 1em;
+  border-radius: 1em;
+  font-size: 1.2em;
+}
+.about-me img {
+  max-width: 20vw;
+  border-radius: 1em;
+  background-color: #18b1d1;
+  justify-self: center;
+  align-self: center;
+  grid-column: 3/4;
+}
+.about-me .par-one {
+  background-color: #3ecd5e;
+  grid-column: 1/4;
+}
+.about-me .par-two {
+  background-color: #f9b234;
+  grid-column: 1/3;
+}
+.about-me .gradient-border {
+  --border-width: 5px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: #000000;
+  border-radius: var(--border-width);
+}
+.about-me .gradient-border::after {
+  position: absolute;
+  content: "";
+  top: calc(-1 * var(--border-width));
+  left: calc(-1 * var(--border-width));
+  z-index: -1;
+  width: calc(100% + var(--border-width) * 2);
+  height: calc(100% + var(--border-width) * 2);
+  background: linear-gradient(60deg, hsl(224, 85%, 66%), hsl(269, 85%, 66%), hsl(314, 85%, 66%), hsl(359, 85%, 66%), hsl(44, 85%, 66%), hsl(89, 85%, 66%), hsl(134, 85%, 66%), hsl(179, 85%, 66%));
+  background-size: 300% 300%;
+  background-position: 0 50%;
+  border-radius: calc(2 * var(--border-width));
+  animation: moveGradient 4s alternate infinite;
+}
+@keyframes moveGradient {
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 #three {
@@ -153,6 +207,10 @@ nav a {
 }
 #three .container {
   margin-top: 6em;
+}
+#three .container h2 {
+  position: relative;
+  z-index: 3;
 }
 
 .course-box {
@@ -251,16 +309,28 @@ nav a {
   background-color: #18b1d1;
 }
 
-.ag-courses_item:nth-child(3n) .ag-courses-item_bg {
-  background-color: #e44002;
+.webrebel-2 .item-bg {
+  background-color: #f9b234;
 }
 
-.ag-courses_item:nth-child(5n) .ag-courses-item_bg {
-  background-color: #cd3e94;
+.es6 .item-bg {
+  background-color: #3ecd5e;
 }
 
-.ag-courses_item:nth-child(6n) .ag-courses-item_bg {
-  background-color: #4c49ea;
+.vue .item-bg {
+  background-color: #18b1d1;
+}
+
+.ui-ux .item-bg {
+  background-color: #db3a09;
+}
+
+.sql .item-bg {
+  background-color: #18b1d1;
+}
+
+.game-dev .item-bg {
+  background-color: #f9b234;
 }
 
 @media only screen and (max-width: 1024px) {

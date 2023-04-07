@@ -13,6 +13,14 @@ $fourth-color-thema: rgb(81, 231, 81);
 $main-color-font: cornsilk;
 
 
+//Courses colors
+$cc-one: #db3a09;
+$cc-two: #f9b234;
+$cc-three: #952aff;
+$cc-four: #3ecd5e;
+$cc-five: #18b1d1;
+
+
 // GENERAL
 html {   
     scroll-behavior: smooth;
@@ -157,7 +165,7 @@ nav {
 
 // SECTION TWO
 #two {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0)100%);
+    background: linear-gradient(0deg, hsl(176, 47%, 94%), rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0)100%);
     justify-content: flex-end;
     position: relative;
     z-index: 3;
@@ -168,11 +176,91 @@ nav {
 }
 
 .about-me {
-    text-align: right;
-    & p {
-        width: 50vw;
+    display: grid;
+    gap: 1em;
+    grid-template-columns: 2fr 2fr 1fr;
+    & h3 {
+        font-size: 2em;
+        grid-column: 2 / 4;
     }
+    & p {
+        margin: 0;
+        padding: 1em;
+        //border: 2px solid white;
+        border-radius: 1em;
+        font-size: 1.2em;
+    }
+    & img {
+        max-width: 20vw;
+        border-radius: 1em;
+        background-color: $second-color-thema;
+        justify-self: center;
+        align-self: center;
+        grid-column: 3 / 4;
+    }
+    .par-one {
+        background-color: $cc-four;
+        grid-column: 1 / 4;
+    }
+    .par-two {
+        background-color: $cc-two;
+        grid-column: 1 / 3;
+    }
+    
+    
+    //experimental
+    & .gradient-border {
+        --border-width: 5px;
+      
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        //width: 300px;
+        //height: 200px;
+        //font-family: Lato, sans-serif;
+        //font-size: 2.5rem;
+        //text-transform: uppercase;
+        color: white;
+        background: #000000;
+        border-radius: var(--border-width);
+      
+        &::after {
+            position: absolute;
+            content: "";
+            top: calc(-1 * var(--border-width));
+            left: calc(-1 * var(--border-width));
+            z-index: -1;
+            width: calc(100% + var(--border-width) * 2);
+            height: calc(100% + var(--border-width) * 2);
+            background: linear-gradient(
+                60deg,
+                hsl(224, 85%, 66%),
+                hsl(269, 85%, 66%),
+                hsl(314, 85%, 66%),
+                hsl(359, 85%, 66%),
+                hsl(44, 85%, 66%),
+                hsl(89, 85%, 66%),
+                hsl(134, 85%, 66%),
+                hsl(179, 85%, 66%)
+            );
+            background-size: 300% 300%;
+            background-position: 0 50%;
+            border-radius: calc(2 * var(--border-width));
+            animation: moveGradient 4s alternate infinite;
+            }
+      }
+      
+    @keyframes moveGradient {
+        50% {
+            background-position: 100% 50%;
+        }
+    }
+
+
+
 }
+
 
 // SECTION THREE
 
@@ -181,6 +269,10 @@ nav {
     text-align: left;
     & .container {
         margin-top: $navigation-height;
+        & h2 {
+            position: relative;
+            z-index: 3;
+        }
     }
 }
 
@@ -241,7 +333,7 @@ nav {
             color: $main-color-font;
             text-decoration: none;
             transition: $basic-transition;
-        }
+        }   
     }
 }
 
@@ -266,40 +358,49 @@ nav {
     transition: $basic-transition;
 }
 
-
 .webrebel .item-bg {
-    background-color: #db3a09;
+    background-color: $cc-one;
 }
 
 .oop .item-bg {
-    background-color: #f9b234;
+    background-color: $cc-two;
 }
 
 .sass .item-bg {
-    background-color: #952aff;
+    background-color: $cc-three;
 }
 
 .github .item-bg {
-    background-color: #3ecd5e;
+    background-color: $cc-four;
 }
 
 .js-games .item-bg {
-    background-color: $second-color-thema;
+    background-color: $cc-five;
 }
 
-.ag-courses_item:nth-child(3n) .ag-courses-item_bg {
-    background-color: #e44002;
+.webrebel-2 .item-bg {
+    background-color: $cc-two;
 }
 
-
-.ag-courses_item:nth-child(5n) .ag-courses-item_bg {
-    background-color: #cd3e94;
+.es6 .item-bg{
+    background-color: $cc-four;
 }
 
-.ag-courses_item:nth-child(6n) .ag-courses-item_bg {
-    background-color: #4c49ea;
+.vue .item-bg {
+    background-color: $cc-five;
 }
 
+.ui-ux .item-bg {
+    background-color: $cc-one;
+}
+
+.sql .item-bg {
+    background-color: $cc-five;
+}
+
+.game-dev .item-bg {
+    background-color: $cc-two;
+}
 
 //MEDIA
 @media only screen and (max-width: 1024px){
