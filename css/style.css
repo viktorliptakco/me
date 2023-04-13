@@ -142,19 +142,45 @@ nav a {
 
 .about-me {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 2fr 2fr 1fr;
   gap: 1em;
-  /*& img {
+  /*& .gradient-border {
+      --border-width: 5px;     
       position: relative;
-      max-width: 15vw;
-      border-radius: 1em;
-      background-color: $cc-two;
-      justify-self: center;
-      align-self: center;
-      grid-column: 3 / 4;
-      transition: $basic-transition;
-      &:hover {
-          background-color: pink;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      border-radius: var(--border-width);     
+      &::after {
+          position: absolute;
+          content: "";
+          top: calc(-1 * var(--border-width));
+          left: calc(-1 * var(--border-width));
+          z-index: -1;
+          width: calc(100% + var(--border-width) * 2);
+          height: calc(100% + var(--border-width) * 2);
+          background: linear-gradient(
+              60deg,
+              hsl(224, 85%, 66%),
+              hsl(269, 85%, 66%),
+              hsl(314, 85%, 66%),
+              hsl(359, 85%, 66%),
+              hsl(44, 85%, 66%),
+              hsl(89, 85%, 66%),
+              hsl(134, 85%, 66%),
+              hsl(179, 85%, 66%)
+          );
+          background-size: 300% 300%;
+          background-position: 0 50%;
+          border-radius: calc(2 * var(--border-width));
+          animation: moveGradient 4s alternate infinite;
+          }
+  }
+
+  @keyframes moveGradient {
+      50% {
+          background-position: 100% 50%;
       }
   }*/
 }
@@ -190,6 +216,7 @@ nav a {
   max-width: 100%;
   position: relative;
   top: 4px;
+  transform: rotateY(180deg);
 }
 .about-me .picture p {
   position: relative;
@@ -199,34 +226,6 @@ nav a {
   padding: 0;
   margin-top: -1em;
   transform: rotate(90deg);
-}
-.about-me .gradient-border {
-  --border-width: 5px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  border-radius: var(--border-width);
-}
-.about-me .gradient-border::after {
-  position: absolute;
-  content: "";
-  top: calc(-1 * var(--border-width));
-  left: calc(-1 * var(--border-width));
-  z-index: -1;
-  width: calc(100% + var(--border-width) * 2);
-  height: calc(100% + var(--border-width) * 2);
-  background: linear-gradient(60deg, hsl(224, 85%, 66%), hsl(269, 85%, 66%), hsl(314, 85%, 66%), hsl(359, 85%, 66%), hsl(44, 85%, 66%), hsl(89, 85%, 66%), hsl(134, 85%, 66%), hsl(179, 85%, 66%));
-  background-size: 300% 300%;
-  background-position: 0 50%;
-  border-radius: calc(2 * var(--border-width));
-  animation: moveGradient 4s alternate infinite;
-}
-@keyframes moveGradient {
-  50% {
-    background-position: 100% 50%;
-  }
 }
 
 .skillmea {
@@ -292,9 +291,10 @@ nav a {
   color: cornsilk;
 }
 
-.course-box-item:hover {
-  border-radius: 1.5em;
+.center {
+  background-color: red;
 }
+
 .course-box-item:hover .item-bg {
   transform: scale(10.5);
 }

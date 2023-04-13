@@ -178,7 +178,7 @@ nav {
 
 .about-me {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 2fr 2fr 1fr;
     gap: 1em;
     & h3 {
         font-size: 1.75em;
@@ -196,20 +196,6 @@ nav {
         transition: $basic-transition;
     }
 
-    /*& img {
-        position: relative;
-        max-width: 15vw;
-        border-radius: 1em;
-        background-color: $cc-two;
-        justify-self: center;
-        align-self: center;
-        grid-column: 3 / 4;
-        transition: $basic-transition;
-        &:hover {
-            background-color: pink;
-        }
-    }*/
-
     & .par-one {
         background-color: $cc-five;
         grid-column: 1 / 5;
@@ -221,30 +207,31 @@ nav {
     }
     
     & .picture {
-    grid-column: 4 / 5;
-    //grid-row: 3 / 4;
-    background-color: $cc-three;
-    border-radius: 1em;
-    overflow: hidden;
-    & img {
-        max-width: 100%;
-        position: relative;
-        top: 4px;
-    }
-    & p {
-        position: relative;
-        top: 35%;
-        left: 45%;
-        margin: 0;
-        padding: 0;
-        margin-top: -1em;
-        transform: rotate(90deg);
-        
-    }
+        grid-column: 4 / 5;
+        //grid-row: 3 / 4;
+        background-color: $cc-three;
+        border-radius: 1em;
+        overflow: hidden; 
+        & img {
+            max-width: 100%;
+            position: relative;
+            top: 4px;        
+            transform: rotateY(180deg);
+        }
+        & p {
+            position: relative;
+            top: 35%;
+            left: 45%;
+            margin: 0;
+            padding: 0;
+            margin-top: -1em;
+            transform: rotate(90deg);
+            
+        }
     }
 
     //experimental
-    & .gradient-border {
+    /*& .gradient-border {
         --border-width: 5px;     
         position: relative;
         display: flex;
@@ -282,9 +269,7 @@ nav {
         50% {
             background-position: 100% 50%;
         }
-    }
-
-
+    }*/
 
 }
 
@@ -355,9 +340,8 @@ nav {
     position: relative;
     color: $main-color-font;
 }
-
+.center{background-color: red;}
 .course-box-item:hover {
-    border-radius: 1.5em;
     & .item-bg {
         transform: scale(10.5);
     }

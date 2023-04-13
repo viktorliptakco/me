@@ -36,3 +36,20 @@ itemLinks.forEach(link => {
     event.preventDefault();
   });
 });
+
+
+
+
+function setCenterClass() {
+  const elements = document.querySelectorAll('.course-box-item');
+  const centerElement = getCenterElement(elements);
+  elements.forEach((element) => {
+    if (element === centerElement) {
+      element.classList.add('center');
+    } else {
+      element.classList.remove('center');
+    }
+  });
+}
+
+window.addEventListener('scroll', setCenterClass);
