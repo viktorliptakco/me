@@ -59,6 +59,23 @@ nav a {
   border-bottom: 3.5px solid #feea02;
 }
 
+.background-top {
+  background: url(../img/colorful-background.jpg);
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 120%;
+  position: absolute;
+  z-index: 1;
+}
+.background-top div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgb(0, 0, 0) 10%, rgba(0, 0, 0, 0) 65%);
+  z-index: 2;
+}
+
 #one {
   font-family: "Orbitron", sans-serif;
   font-weight: 900;
@@ -85,49 +102,11 @@ nav a {
 .introduction .name {
   color: #feea02;
 }
-
-.technology {
-  cursor: pointer;
-  display: inline;
-  margin-right: 0.4em;
-  transition: all 0.35s ease;
-  color: #eb3a01;
+.introduction .technology {
+  color: #db3a09;
 }
-.technology:hover {
-  border-bottom: none;
-  transition: all 0.35s ease;
-  color: rgb(81, 231, 81);
-}
-.technology span {
-  display: inline-block;
-  position: relative;
-  transition: transform 0.25s ease;
-  margin-right: -0.35em;
-}
-.technology span:hover {
-  transform: translateY(-14px);
-  transition: transform 0.25s ease;
-}
-
-.code {
+.introduction .code {
   color: #18b1d1;
-}
-
-.background-one {
-  background: url(../img/colorful-background.jpg);
-  background-position: center center;
-  background-size: cover;
-  width: 100%;
-  height: 120%;
-  position: absolute;
-  z-index: 1;
-}
-.background-one div {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, rgb(0, 0, 0) 10%, rgba(0, 0, 0, 0) 65%);
-  z-index: 2;
 }
 
 #two {
@@ -142,125 +121,96 @@ nav a {
 
 .about-me {
   display: grid;
-  grid-template-columns: 2fr 2fr 2fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 1em;
-  /*& .gradient-border {
-      --border-width: 5px;     
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      border-radius: var(--border-width);     
-      &::after {
-          position: absolute;
-          content: "";
-          top: calc(-1 * var(--border-width));
-          left: calc(-1 * var(--border-width));
-          z-index: -1;
-          width: calc(100% + var(--border-width) * 2);
-          height: calc(100% + var(--border-width) * 2);
-          background: linear-gradient(
-              60deg,
-              hsl(224, 85%, 66%),
-              hsl(269, 85%, 66%),
-              hsl(314, 85%, 66%),
-              hsl(359, 85%, 66%),
-              hsl(44, 85%, 66%),
-              hsl(89, 85%, 66%),
-              hsl(134, 85%, 66%),
-              hsl(179, 85%, 66%)
-          );
-          background-size: 300% 300%;
-          background-position: 0 50%;
-          border-radius: calc(2 * var(--border-width));
-          animation: moveGradient 4s alternate infinite;
-          }
-  }
-
-  @keyframes moveGradient {
-      50% {
-          background-position: 100% 50%;
-      }
-  }*/
 }
 .about-me h3 {
   font-size: 1.75em;
-  grid-column: 3/5;
   margin: 0.5em 0;
+  grid-column: 3/5;
+}
+.about-me .code-image {
+  color: white;
+  overflow: hidden;
+  grid-column: 1/2;
+  text-align: center;
+}
+.about-me .code-image img {
+  max-height: 20%;
+}
+.about-me .code-image svg {
+  max-height: 5em;
 }
 .about-me p {
   position: relative;
   top: 0;
   margin: 0;
-  padding: 1em;
+  padding: 0.5em;
   border-radius: 1em;
   font-size: 1.2em;
+  text-align: justify;
   transition: all 0.5s ease;
 }
 .about-me .par-one {
-  background-color: #18b1d1;
-  grid-column: 1/5;
+  background-color: #121212;
+  grid-column: 2/5;
 }
 .about-me .par-two {
-  background-color: #3ecd5e;
+  background-color: #121212;
   grid-column: 1/4;
 }
-.about-me .picture {
-  grid-column: 4/5;
-  background-color: #952aff;
+.about-me .gradient-border {
+  --border-width: 0px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: var(--border-width);
   border-radius: 1em;
-  overflow: hidden;
 }
-.about-me .picture img {
-  max-width: 100%;
-  position: relative;
-  top: 4px;
-  transform: rotateY(180deg);
+.about-me .gradient-border::after {
+  position: absolute;
+  content: "";
+  top: calc(-1 * var(--border-width));
+  left: calc(-1 * var(--border-width));
+  z-index: -1;
+  width: calc(100% + var(--border-width) * 2);
+  height: calc(100% + var(--border-width) * 2);
+  background: linear-gradient(60deg, hsl(224, 85%, 66%), hsl(269, 85%, 66%), hsl(314, 85%, 66%), hsl(359, 85%, 66%), hsl(44, 85%, 66%), hsl(89, 85%, 66%), hsl(134, 85%, 66%), hsl(179, 85%, 66%));
+  background-size: 300% 300%;
+  background-position: 0 50%;
+  border-radius: calc(2 * var(--border-width));
+  animation: moveGradient 8s alternate infinite;
 }
-.about-me .picture p {
-  position: relative;
-  top: 35%;
-  left: 45%;
-  margin: 0;
-  padding: 0;
-  margin-top: -1em;
-  transform: rotate(90deg);
+@keyframes moveGradient {
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
-.skillmea {
+.web-link {
   cursor: pointer;
   display: inline-block;
   margin-right: 0.4em;
   transition: all 0.35s ease;
-  color: #952aff;
+  color: rgb(99, 99, 99);
   text-decoration: none;
   font-weight: 700;
 }
-.skillmea:hover {
+.web-link:hover {
   border-bottom: none;
   transition: all 0.35s ease;
-  color: rgb(61, 61, 61);
+  color: #952aff;
 }
-.skillmea span {
+.web-link span {
   display: inline-block;
   position: relative;
   transition: transform 0.25s ease;
   margin-right: -0.25em;
 }
-.skillmea span:hover {
+.web-link span:hover {
   transform: translateY(-8px);
   transition: transform 0.25s ease;
-}
-
-.chat-gpt {
-  text-decoration: none;
-  font-weight: 700;
-  color: #952aff;
-  transition: all 0.5s ease;
-}
-.chat-gpt:hover {
-  color: black;
 }
 
 #three {
@@ -302,7 +252,7 @@ nav a {
   left: -6.5em;
 }
 .course-box-item:hover .logo-and-name h3 {
-  margin: 0 -1em 0 2.3em;
+  margin: 0 -0.8em 0 2.3em;
 }
 .course-box-item:hover .logo-and-name h3 a {
   text-decoration: underline;
@@ -431,7 +381,7 @@ nav a {
     font-size: 0.9em;
   }
   .logo-and-name h3 {
-    font-size: 16px;
+    font-size: 1em;
   }
 }
 @media screen and (max-width: 700px) {

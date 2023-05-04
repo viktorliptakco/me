@@ -40,7 +40,7 @@ itemLinks.forEach(link => {
 
 
 
-function setCenterClass() {
+/*function setCenterClass() {
   const elements = document.querySelectorAll('.course-box-item');
   const centerElement = getCenterElement(elements);
   elements.forEach((element) => {
@@ -52,4 +52,4 @@ function setCenterClass() {
   });
 }
 
-window.addEventListener('scroll', setCenterClass);
+window.addEventListener('scroll', setCenterClass);*/
