@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@900&family=Montserrat:wght@500;700;900&family=Orbitron:wght@600;900&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
 
 $navigation-height: 6em;
 $navigation-height-mobile: 3em;
@@ -167,17 +168,13 @@ nav {
     }
 
     & .code-image {
-        color: white;
-        //background: #3ecd5e;
-        //max-height: 7em;
+        display: flex;
         overflow: hidden;
         grid-column: 1 / 2;
         text-align: center;
-        & img {
-            max-height: 20%;
-        }
-        & svg {
-            max-height: 5em;
+        & i {
+            //font-size: 5em;
+            //color: #121212;
         }
     }
 
@@ -185,8 +182,9 @@ nav {
         position: relative;
         top: 0;
         margin: 0;
-        padding: 0.5em;
+        padding: 1em;
         //border: 2px solid white;
+        background-color: #121212;
         border-radius: 1em;
         font-size: 1.2em;
         text-align: justify;
@@ -195,61 +193,63 @@ nav {
     }
 
     & .par-one {
-        //background-color: $cc-five;
-        background-color: #121212;
         grid-column: 2 / 5;
     }
     
     & .par-two {
-        //background-color: $cc-four;
-        background-color: #121212;
         grid-column: 1 / 4;
     }
 
-    //experimental
-    & .gradient-border {
-        --border-width: 0px;     
-        position: relative;
-        //display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        border-radius: var(--border-width);
-        border-radius: 1em;   
-        &::after {
-            position: absolute;
-            content: "";
-            top: calc(-1 * var(--border-width));
-            left: calc(-1 * var(--border-width));
-            z-index: -1;
-            width: calc(100% + var(--border-width) * 2);
-            height: calc(100% + var(--border-width) * 2);
-            background: linear-gradient(
-                60deg,
-                hsl(224, 85%, 66%),
-                hsl(269, 85%, 66%),
-                hsl(314, 85%, 66%),
-                hsl(359, 85%, 66%),
-                hsl(44, 85%, 66%),
-                hsl(89, 85%, 66%),
-                hsl(134, 85%, 66%),
-                hsl(179, 85%, 66%)
-            );
-            background-size: 300% 300%;
-            background-position: 0 50%;
-            border-radius: calc(2 * var(--border-width));
-            animation: moveGradient 8s alternate infinite;
-        }
-    }
-      
-    @keyframes moveGradient {
-        50% {
-            background-position: 100% 50%;
-        }
+    & .par-three{
+        grid-column: 2 / 5;
     }
 
+    & .par-four {
+        grid-column: 1 / 4;
+    }
 }
 
+//experimental
+.gradient-border {
+    --border-width: 0px;     
+    position: relative;
+    //display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: var(--border-width);
+    border-radius: 1em;   
+    &::after {
+        position: absolute;
+        content: "";
+        top: calc(-1 * var(--border-width));
+        left: calc(-1 * var(--border-width));
+        z-index: -1;
+        width: calc(100% + var(--border-width) * 2);
+        height: calc(100% + var(--border-width) * 2);
+        background: linear-gradient(
+            60deg,
+            hsl(224, 85%, 66%),
+            hsl(269, 85%, 66%),
+            hsl(314, 85%, 66%),
+            hsl(359, 85%, 66%),
+            hsl(44, 85%, 66%),
+            hsl(89, 85%, 66%),
+            hsl(134, 85%, 66%),
+            hsl(179, 85%, 66%)
+        );
+        background-size: 300% 300%;
+        background-position: 0 50%;
+        border-radius: calc(2 * var(--border-width));
+        animation: moveGradient 8s alternate infinite;
+    }
+}
+    
+@keyframes moveGradient {
+    50% {
+        background-position: 100% 50%;
+    }
+}
 
 .web-link {
     cursor: pointer;
